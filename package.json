@@ -1,0 +1,24 @@
+{
+  "name": "funky-gen",
+  "version": "1.0.0",
+  "description": "From some user data, generates a hash and an equation of consistent complexity in asciimath format",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "test": "mocha tests/*-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istein-neural-networks/funky-gen.git"
+  },
+  "author": "iStein Neural Networks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/istein-neural-networks/funky-gen/issues"
+  },
+  "homepage": "https://github.com/istein-neural-networks/funky-gen#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
