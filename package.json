@@ -6,11 +6,12 @@
     "start": "node server"
   },
   "dependencies": {
+    "applicationinsights": "^1.0.2",
     "express": "~3.1.0"
-},
-"noAnalyze": true,
-"license": "Apache",
-"engines": {
+  },
+  "noAnalyze": true,
+  "license": "Apache",
+  "engines": {
     "node": "~0.10.0 || ~0.12.0 || ~4.2.0"
   }
 }
