@@ -5,7 +5,7 @@ var app = express();
 app.set('port', process.env.PORT || 5557);
 
 app.get('/', function(req,res){
-    res.status(200).send();
+    res.json({message: 'hi there'});
 });
 
 app.listen(app.get('port'), function () {
