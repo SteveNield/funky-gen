@@ -1,22 +1,13 @@
-var Express = require('express'),
-    cors = require('cors'),
-    config = require('./config');
+var express = require('express');
 
-var app = new Express();
-app.use(cors());
+var app = express();
 
-app.get(['','/:hash','/:hash/:complexity'], function(req,res){
-  try{
-    res.sendStatus(200);
-  } catch(err){
-    res
-      .status(500)
-      .json({
-        err: err.toString()
-      });
-  }
-})
+app.set('port', process.env.PORT || 5557);
 
-app.listen(config.port, function(){
-  console.log('listening on '+config.port)
-})
+app.get('/', function(req,res){
+    res.status(200).send();
+});
+
+app.listen(app.get('port'), function () {
+    console.log("Express server listening on port " + app.get('port'));
+});
