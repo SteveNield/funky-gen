@@ -8,7 +8,7 @@
   "dependencies": {
     "applicationinsights": "^1.0.2",
     "body-parser": "^1.18.2",
-    "express": "~3.1.0",
+    "express": "^4.16.3",
     "winter-simple-auth": "^1.0.1"
   },
   "noAnalyze": true,
