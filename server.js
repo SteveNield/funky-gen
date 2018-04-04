@@ -2,15 +2,32 @@ if(process.env.APPINSIGHTS_INSTRUMENTATIONKEY){
   require('applicationinsights').start();
 }
 
-var express = require('express');
+var Express = require('express'),
+    bodyParser = require('body-parser'),
+    simpleauth = require('winter-simple-auth'),
+    config = require('./config');
 
-var app = express();
-
-app.set('port', process.env.PORT || 5557);
-
-app.get('/generate', function(req,res){
-  res.json({message: 'generate!'});
+simpleauth.Setup({
+  users: [{
+    role: 'Reader',
+    accessKey: config.auth.reader.key
+  }],
+  secret: config.auth.secret
 });
+
+var app = Express();
+app.use(bodyParser());
+app.set('port', config.port);
+
+simpleauth.Route(app);
+
+app.get('/generate',
+  simpleauth.Authentication,
+  simpleauth.Authorization.for(['Reader']),
+  function(req,res){
+    res.json({message: 'generate!'});
+  }
+);
 
 app.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
