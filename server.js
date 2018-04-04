@@ -1,5 +1,5 @@
 if(process.env.APPINSIGHTS_INSTRUMENTATIONKEY){
-  require('applicationinsights').setup().start();
+  require('winter-loggr').setupAppInsights(process.env.APPINSIGHTS_INSTRUMENTATIONKEY);
 }
 
 var Express = require('express'),
@@ -21,13 +21,7 @@ app.set('port', config.port);
 
 simpleauth.Route(app);
 
-app.get('/generate',
-  simpleauth.Authentication,
-  simpleauth.Authorization.for(['Reader']),
-  function(req,res){
-    res.json({message: 'generate!'});
-  }
-);
+require('./routes/generate')(app);
 
 app.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
