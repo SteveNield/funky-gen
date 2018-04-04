@@ -1,0 +1,18 @@
+{
+  "0": "Determinant",
+  "1": "ConvolutionFilter",
+  "2": "Derivative",
+  "3": "Integral",
+  "4": "Determinant",
+  "5": "Sum",
+  "6": "Median",
+  "7": "Max",
+  "8": "Deviation",
+  "9": "DeviationRow",
+  "a": "DeviationCol",
+  "b": "Min",
+  "c": "ConvolutionFilter",
+  "d": "Derivative",
+  "e": "Integral",
+  "f": "Determinant"
+}

@@ -3,18 +3,23 @@
   "version": "1.0.0",
   "description": "From some user data, generates a hash and an equation of consistent complexity in asciimath format",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "test": "mocha tests/*-spec.js"
   },
   "dependencies": {
     "applicationinsights": "^1.0.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "winter-loggr": "^1.0.2",
+    "md5": "^2.2.1",
+    "winter-loggr": "^1.0.3",
     "winter-simple-auth": "^1.0.1"
   },
   "noAnalyze": true,
   "license": "Apache",
   "engines": {
     "node": "6.9.0"
+  },
+  "devDependencies": {
+    "winter-test-setup": "^1.0.0"
   }
 }

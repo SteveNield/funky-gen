@@ -1,0 +1,10 @@
+{
+  "operator": "Add",
+  "operands": [{
+    "operator": "Min",
+    "operands": []
+  }, {
+    "operator": "Min",
+    "operands": []
+  }]
+}

@@ -1,0 +1,22 @@
+{
+  "operator": "Add",
+  "operands": [{
+    "operator": "Add",
+    "operands": [{
+      "operator": "Multiply",
+      "operands": [{
+        "operator": "Determinant",
+        "operands": []
+      },{
+        "operator": "Integral",
+        "operands": ["Xij_PLACEHOLDER"]
+      }]
+    },{
+      "operator": "Determinant",
+      "operands": []
+    }]
+  },{
+    "operator": "Min",
+    "operands": []
+  }]
+}
