@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "applicationinsights": "^1.0.2",
+    "body-parser": "^1.18.2",
     "express": "~3.1.0",
     "winter-simple-auth": "^1.0.1"
   },

@@ -1,5 +1,5 @@
 if(process.env.APPINSIGHTS_INSTRUMENTATIONKEY){
-  require('applicationinsights').start();
+  require('applicationinsights').setup().start();
 }
 
 var Express = require('express'),
