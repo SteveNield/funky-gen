@@ -12,8 +12,5 @@
     "winter-simple-auth": "^1.0.1"
   },
   "noAnalyze": true,
-  "license": "Apache",
-  "engines": {
-    "node": "~0.10.0 || ~0.12.0 || ~4.2.0"
-  }
+  "license": "Apache"
 }
