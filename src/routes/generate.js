@@ -26,11 +26,21 @@ module.exports = function(app){
           });
       }
 
+      loggr.event('generate-request', {
+        input: input
+      });
+
       try{
-        res.json(FunkyGen({
+        var func = FunkyGen({
           hash: HashGenerator({ input: input, length: Config.hash.length }),
           complexity: req.params.complexity || 0
-        }));
+        });
+
+        loggr.event('function-generated', {
+          func: func.equation
+        });
+
+        res.json(func);
       } catch(err){
         loggr.err(err.toString());
         loggr.warn(err.stack);
