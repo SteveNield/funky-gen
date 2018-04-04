@@ -11,7 +11,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "md5": "^2.2.1",
-    "winter-loggr": "^1.0.3",
+    "winter-loggr": "^1.0.4",
     "winter-simple-auth": "^1.0.1"
   },
   "noAnalyze": true,

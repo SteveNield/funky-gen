@@ -13,6 +13,7 @@ module.exports = function(app){
     simpleauth.Authentication,
     simpleauth.Authorization.for(['Reader']),
     function(req,res){
+      loggr.trackRequest(req,res);
       let input = req.params.input;
 
       if(!input){
@@ -24,8 +25,6 @@ module.exports = function(app){
             err: message
           });
       }
-
-      loggr.event('generate-request with input data: '+input);
 
       try{
         res.json(FunkyGen({
