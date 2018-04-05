@@ -21,6 +21,10 @@ app.set('port', config.port);
 
 simpleauth.Route(app);
 
+app.get('/sampleendpoint', function(req,res){
+  res.json({message:'Hey there!'});
+})
+
 require('./src/routes/generate')(app);
 
 app.listen(app.get('port'), function () {
