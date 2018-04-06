@@ -30,6 +30,7 @@ module.exports = function(options){
     equation: formattedEquation,
     input: hashComponents.input,
     solution: solution,
-    complexity: complexity
+    complexity: complexity,
+    uid: hash
   }
 }

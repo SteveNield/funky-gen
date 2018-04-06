@@ -12,7 +12,8 @@ describe('FunkyGen', function(){
         input: testData.expectedInputData,
         solution: testData.expectedSolution,
         equation: testData.expectedEquation,
-        complexity: parseInt(testData.complexity)
+        complexity: parseInt(testData.complexity),
+        uid: testData.hash
       });
     })
   }
