@@ -1,4 +1,4 @@
-var Matrices = require('./operations/maths/matrices'),
+var Matrices = require('winter-matrix-maths'),
     Operators = require('./operators'),
     Operands = require('./operands'),
     Config = require('./../config');

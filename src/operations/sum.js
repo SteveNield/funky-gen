@@ -1,5 +1,5 @@
 var Constants = require('./../constants'),
-    Matrices = require('./maths/matrices'),
+    Matrices = require('winter-matrix-maths'),
     ProtoOperation = require('./proto-operation')
 
 var op = ProtoOperation({

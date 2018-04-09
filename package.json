@@ -12,6 +12,7 @@
     "express": "^4.16.3",
     "md5": "^2.2.1",
     "winter-loggr": "^1.0.4",
+    "winter-matrix-maths": "^1.0.0",
     "winter-simple-auth": "^1.0.1"
   },
   "noAnalyze": true,

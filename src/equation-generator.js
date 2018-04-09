@@ -1,8 +1,7 @@
 var Operands = require('./operands'),
     Operators = require('./operators'),
     Constants = require('./constants'),
-    Operations = require('./operations/index'),
-    Matrices = require('./operations/maths/matrices');
+    Operations = require('./operations/index');
 
 var compositeOperands = [];
 

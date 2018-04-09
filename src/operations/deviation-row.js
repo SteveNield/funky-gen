@@ -1,12 +1,11 @@
-var Matrices = require('./maths/matrices'),
+var Matrices = require('winter-matrix-maths'),
     Constants = require('./../constants'),
     ProtoOperation = require('./proto-operation'),
     OperationFormatter = require('./operation-formatter');
 
 var op = ProtoOperation({
   func: function(args){
-    var mean = Matrices.flatMean(args.x[args.i]);
-    return Matrices.deviationAt(args.operands[0], mean);
+    return Matrices.deviationAt(args.operands[0], args.x[args.i]);
   },
   numberOfOperands: 1,
   allowConstants: false,

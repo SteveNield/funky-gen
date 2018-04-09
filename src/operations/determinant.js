@@ -1,6 +1,6 @@
 var Constants = require('./../constants'),
     ProtoOperation = require('./proto-operation'),
-    Matrices = require('./maths/matrices'),
+    Matrices = require('winter-matrix-maths'),
     OperationFormatter = require('./operation-formatter');
 
 var op = ProtoOperation({
