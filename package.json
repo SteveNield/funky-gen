@@ -2,6 +2,7 @@
   "name": "funky-gen",
   "version": "1.0.0",
   "description": "From some user data, generates a hash and an equation of consistent complexity in asciimath format",
+  "main": "index.js",
   "scripts": {
     "start": "node server",
     "test": "mocha tests/*-spec.js"
@@ -11,6 +12,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "md5": "^2.2.1",
+    "randomstring": "^1.1.5",
     "winter-loggr": "^1.0.4",
     "winter-matrix-maths": "^1.0.0",
     "winter-simple-auth": "^1.0.1"
