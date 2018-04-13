@@ -11,6 +11,7 @@
     "applicationinsights": "^1.0.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "lz-string": "^1.4.4",
     "md5": "^2.2.1",
     "randomstring": "^1.1.5",
     "winter-loggr": "^1.0.4",
