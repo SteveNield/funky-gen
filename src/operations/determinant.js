@@ -1,17 +1,12 @@
-var Constants = require('./../constants'),
-    ProtoOperation = require('./proto-operation'),
-    Matrices = require('winter-matrix-maths'),
-    OperationFormatter = require('./operation-formatter');
+const Constants = require('./../constants');
+const ProtoOperation = require('./proto-operation');
+const Matrices = require('winter-matrix-maths');
+const OperationFormatter = require('./operation-formatter');
 
 var op = ProtoOperation({
-  func: function(args){
-    return Matrices.determinant(args.x);
-  },
+  func: ({ x }) => Matrices.determinant(x),
   numberOfOperands: 0,
-  format: function(operands){
-    return OperationFormatter
-      .wrapInBrackets('|\\X|');
-  }
-})
+  format: () => OperationFormatter.wrapInBrackets('|\\X|')
+});
 
 module.exports = op;

@@ -1,11 +1,14 @@
 {
-  "name": "funky-gen",
+  "name": "@istein/funky-gen",
   "version": "1.0.1",
   "description": "From some user data, generates a hash and an equation of consistent complexity in asciimath format",
   "main": "index.js",
   "scripts": {
     "start": "node server",
     "test": "mocha tests/*-spec.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm-proxy.fury.io/stevenield/"
   },
   "dependencies": {
     "applicationinsights": "^1.0.2",
