@@ -4,10 +4,10 @@ const OperationFormatter = require('./operation-formatter');
 
 const INTEGRAL_RANGE_SIZE = 2;
 
-const func = ({ operands }) => {
+const func = ({ operands: [a] }) => {
   // constant function f = 2Xij+2
-  const upper = operands[0]+INTEGRAL_RANGE_SIZE;
-  const lower = operands[0]-INTEGRAL_RANGE_SIZE;
+  const upper = a+INTEGRAL_RANGE_SIZE;
+  const lower = a-INTEGRAL_RANGE_SIZE;
 
   return (Math.pow(upper, 2)+(2*upper))-(Math.pow(lower, 2)+(2*lower));
 };

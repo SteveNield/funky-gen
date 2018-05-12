@@ -1,11 +1,9 @@
 const ProtoOperation = require('./proto-operation');
 const OperationFormatter = require('./operation-formatter');
 
-const func = ({ operands }) =>
-  operands[0] + operands[1];
+const func = ({ operands: [a, b] }) => a + b;
 
-const format = operands =>
-  OperationFormatter.wrapInBrackets(`${operands[0]} + ${operands[1]}`)
+const format = ([a, b]) => OperationFormatter.wrapInBrackets(`${a} + ${b}`);
 
 module.exports = ProtoOperation({
   func,

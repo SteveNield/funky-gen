@@ -5,9 +5,9 @@ const Matrices = require('winter-matrix-maths');
 
 const func = ({ x }) =>Matrices
   .flatten(x)
-  .reduce(function(a,b){
+  .reduce((a, b) => {
     if(isNaN(a)) return b;
-    return Math.min(a,b);
+    return Math.min(a, b);
   }, NaN);
 
 const format = () => OperationFormatter.wrapInBrackets('min('+Constants.X+')');

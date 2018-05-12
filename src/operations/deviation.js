@@ -3,7 +3,7 @@ const Constants = require('./../constants');
 const ProtoOperation = require('./proto-operation');
 const OperationFormatter = require('./operation-formatter');
 
-const func = ({ operands, x}) => Matrices.deviationAt(operands[0], x);
+const func = ({ operands: [a], x}) => Matrices.deviationAt(a, x);
 
 const format = () => OperationFormatter.wrapInBrackets(`sigma(${Constants.Xij})`);
 

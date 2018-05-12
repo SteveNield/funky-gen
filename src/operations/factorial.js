@@ -1,7 +1,6 @@
 const ProtoOperation = require('./proto-operation');
 
-const func = ({ operands }) => {
-  const x = operands[0];
+const func = ({ operands: [x] }) => {
   if(x === 0) return 1;
 
   let result = x;
@@ -11,7 +10,7 @@ const func = ({ operands }) => {
   return result;
 }
 
-const format = operands => `${operands[0]} ! `;
+const format = ([a]) => `${a} ! `;
 
 module.exports = ProtoOperation({
   func,
