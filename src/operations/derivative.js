@@ -1,19 +1,21 @@
-var Constants = require('./../constants'),
-    ProtoOperation = require('./proto-operation'),
-    OperationFormatter = require('./operation-formatter');
+const Constants = require('./../constants');
+const ProtoOperation = require('./proto-operation');
+const OperationFormatter = require('./operation-formatter');
 
-var op = ProtoOperation({
-  func: function(args){
-    var xij = args.operands[0];
-    return (2*xij)+2;
-  },
+const func = ({ operands }) => {
+  const xij = operands[0];
+  return (2*xij)+2;
+}
+
+const format = () => OperationFormatter
+  .wrapInBrackets(`(Delta((${Constants.Xij})^2+2${Constants.Xij}+3))/(Delta${Constants.Xij})`);
+
+const op = ProtoOperation({
+  func,
+  format,
   numberOfOperands: 1,
   allowComposites: false,
-  allowConstants: false,
-  format: function(operands){
-    return OperationFormatter
-      .wrapInBrackets('(Delta(('+Constants.Xij+')^2+2'+Constants.Xij+'+3))/(Delta'+Constants.Xij+')');
-  }
+  allowConstants: false
 })
 
 module.exports = op;

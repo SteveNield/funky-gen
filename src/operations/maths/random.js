@@ -1,3 +1,2 @@
-module.exports.randoCalrissian = function(lower, upper){
-  return Math.floor(Math.random()*(upper-lower+1)+lower);
-}
+module.exports.randoCalrissian = (lower, upper) =>
+  Math.floor(Math.random()*(upper-lower+1)+lower);

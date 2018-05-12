@@ -1,13 +1,15 @@
-var ProtoOperation = require('./proto-operation'),
-    OperationFormatter = require('./operation-formatter');
+const ProtoOperation = require('./proto-operation');
+const OperationFormatter = require('./operation-formatter');
+
+const func = ({ operands }) =>
+  operands[0] + operands[1];
+
+const format = operands =>
+  OperationFormatter.wrapInBrackets(`${operands[0]} + ${operands[1]}`)
 
 const op = ProtoOperation({
-  func: function(args){
-    return args.operands[0]+args.operands[1];
-  },
-  format: function(operands){
-    return OperationFormatter.wrapInBrackets(operands[0]+' + '+operands[1]);
-  }
+  func,
+  format
 });
 
 module.exports = op;
