@@ -1,19 +1,15 @@
-var Constants = require('./../constants'),
-    Matrices = require('winter-matrix-maths'),
-    ProtoOperation = require('./proto-operation');
+const Constants = require('./../constants');
+const Matrices = require('winter-matrix-maths');
+const ProtoOperation = require('./proto-operation');
 
-var op = ProtoOperation({
-  func: function(args){
-    return Matrices
-      .flatten(args.x)
-      .reduce(function(a,b){
-        return Math.max(a,b);
-      }, 0);
-  },
-  numberOfOperands: 0,
-  format: function(operands){
-    return 'max('+Constants.X+')';
-  }
-})
+const func = ({ x }) => Matrices
+  .flatten(x)
+  .reduce((a, b) => Math.max(a, b), 0);
 
-module.exports = op;
+const format = () => 'max('+Constants.X+')';
+
+module.exports = ProtoOperation({
+  func,
+  format,
+  numberOfOperands: 0
+});

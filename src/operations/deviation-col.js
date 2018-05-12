@@ -1,18 +1,19 @@
-var Matrices = require('winter-matrix-maths'),
-    Constants = require('./../constants'),
-    ProtoOperation = require('./proto-operation'),
-    OperationFormatter = require('./operation-formatter');
+const Matrices = require('winter-matrix-maths');
+const Constants = require('./../constants');
+const ProtoOperation = require('./proto-operation');
+const OperationFormatter = require('./operation-formatter');
+
+const func = ({ operands, j, x }) =>
+  Matrices.deviationAt(operands[0], x.map(function(row){
+    return row[j];
+  }));
+
+const format = () => OperationFormatter.wrapInBrackets(`sigma_(j)(${Constants.Xij})`);
 
 module.exports = ProtoOperation({
-  func: function(args){
-    return Matrices.deviationAt(args.operands[0], args.x.map(function(row){
-      return row[args.j];
-    }));
-  },
+  func,
+  format,
   numberOfOperands: 1,
   allowConstants: false,
-  allowComposites: false,
-  format: function(operands){
-    return OperationFormatter.wrapInBrackets('sigma_(j)('+Constants.Xij+')');
-  }
-})
+  allowComposites: false
+});

@@ -7,9 +7,7 @@ const func = ({ operands }) =>
 const format = operands =>
   OperationFormatter.wrapInBrackets(`${operands[0]} + ${operands[1]}`)
 
-const op = ProtoOperation({
+module.exports = ProtoOperation({
   func,
   format
 });
-
-module.exports = op;

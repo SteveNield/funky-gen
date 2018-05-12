@@ -3,10 +3,8 @@ const ProtoOperation = require('./proto-operation');
 const Matrices = require('winter-matrix-maths');
 const OperationFormatter = require('./operation-formatter');
 
-var op = ProtoOperation({
+module.exports = ProtoOperation({
   func: ({ x }) => Matrices.determinant(x),
-  numberOfOperands: 0,
-  format: () => OperationFormatter.wrapInBrackets('|\\X|')
+  format: () => OperationFormatter.wrapInBrackets('|\\X|'),
+  numberOfOperands: 0
 });
-
-module.exports = op;

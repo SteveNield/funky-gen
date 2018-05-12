@@ -1,9 +1,13 @@
-module.exports = function(constructorOptions){
-  return {
-    func: constructorOptions.func,
-    format: constructorOptions.format,
-    numberOfOperands: constructorOptions.hasOwnProperty('numberOfOperands') ? constructorOptions.numberOfOperands : 2,
-    allowConstants: constructorOptions.hasOwnProperty('allowConstants') ? constructorOptions.allowConstants : true,
-    allowComposites: constructorOptions.hasOwnProperty('allowComposites') ? constructorOptions.allowComposites : true
-  }
-}
+module.exports = ({
+  func,
+  format,
+  numberOfOperands,
+  allowConstants,
+  allowComposites
+}) => ({
+  func,
+  format,
+  numberOfOperands: typeof numberOfOperands === 'number' ? numberOfOperands : 2,
+  allowConstants: typeof allowConstants === 'boolean' ? allowConstants : true,
+  allowComposites: typeof allowComposites === 'boolean' ? allowComposites : true
+});

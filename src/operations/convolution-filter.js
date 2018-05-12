@@ -21,10 +21,8 @@ const func = ({ i, j, x }) => {
 
 const format = () => OperationFormatter.wrapInBrackets('(sum_(n=j-1)^(j+1) sum_(m=i-1)^(i+1) X_(mn))');
 
-const op = ProtoOperation({
+module.exports = ProtoOperation({
   func,
   format,
   numberOfOperands: 0
-})
-
-module.exports = op;
+});

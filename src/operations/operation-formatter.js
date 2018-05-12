@@ -1,3 +1,1 @@
-module.exports.wrapInBrackets = function(content){
-  return '('+content+')'
-}
+module.exports.wrapInBrackets = content => `(${content})`;

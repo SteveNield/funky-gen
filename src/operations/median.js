@@ -1,15 +1,13 @@
-var Constants = require('./../constants'),
-    Matrices = require('winter-matrix-maths'),
-    ProtoOperation = require('./proto-operation');
+const Constants = require('./../constants');
+const Matrices = require('winter-matrix-maths');
+const ProtoOperation = require('./proto-operation');
 
-var op = ProtoOperation({
-  func: function(args){
-    return Matrices.median(args.x);
-  },
-  numberOfOperands: 0,
-  format: function(operands){
-    return 'tilde '+Constants.X;
-  }
-})
+const func = ({ x }) => Matrices.median(x);
 
-module.exports = op;
+const format = () => `tilde ${Constants.X}`;
+
+module.exports = ProtoOperation({
+  func,
+  format,
+  numberOfOperands: 0
+});

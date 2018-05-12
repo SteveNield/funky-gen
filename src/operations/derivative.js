@@ -4,18 +4,16 @@ const OperationFormatter = require('./operation-formatter');
 
 const func = ({ operands }) => {
   const xij = operands[0];
-  return (2*xij)+2;
+  return (2*xij) + 2;
 }
 
 const format = () => OperationFormatter
   .wrapInBrackets(`(Delta((${Constants.Xij})^2+2${Constants.Xij}+3))/(Delta${Constants.Xij})`);
 
-const op = ProtoOperation({
+module.exports = ProtoOperation({
   func,
   format,
   numberOfOperands: 1,
   allowComposites: false,
   allowConstants: false
-})
-
-module.exports = op;
+});
